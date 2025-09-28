@@ -51,15 +51,22 @@ const App = () => {
   }, []);
 
   const downloadResume = () => {
-    const resumeContent = `
-HARSH BANSAL
+    // Create a proper PDF download link
+    const link = document.createElement('a');
+    link.href = '/Harsh Resume.pdf'; // Use the actual filename in the public folder
+    link.download = 'Harsh_Bansal_Resume.pdf';
+    link.target = '_blank';
+    
+    // Add error handling for cases where the file might not be found
+    link.onerror = () => {
+      console.error('Resume PDF not found, creating fallback text version');
+      const resumeContent = `HARSH BANSAL
 AI & ML Engineer | Building Data-Driven & Real-World Solutions
 
 CONTACT
 Email: harsh.bansal@example.com
 LinkedIn: linkedin.com/in/harshbansal
 GitHub: github.com/harshbansal
-LeetCode: leetcode.com/harshbansal
 
 EDUCATION
 Computer Science and Engineering
@@ -68,54 +75,36 @@ Specialization: Artificial Intelligence and Machine Learning
 TECHNICAL SKILLS
 Programming Languages: C++, C, Java, Python, JavaScript, HTML, CSS, SQL
 Databases & Cloud: MongoDB, MySQL, Google Cloud
-Version Control & CI/CD: Git/GitHub, Jenkins (beginner), Linux
-Automation Tools & Testing: Selenium, Cypress (beginner), Postman, JUnit/TestNG
-Interests: Full-Stack Development
-
-SOFT SKILLS
-Communication, Teamwork, Problem-Solving, Time Management, Statistics, Leadership
+Version Control & CI/CD: Git/GitHub, Jenkins, Linux
+Automation Tools & Testing: Selenium, Cypress, Postman, JUnit/TestNG
 
 PROJECTS
-1. Smart Parking System
-   - IoT-based intelligent parking management solution
-   - Technologies: Python, IoT, Machine Learning, React, MongoDB
+• Smart Parking System - IoT-based intelligent parking management
+• Face Detection & Gender Classification - Real-time AI application
+• Emotion-Sync Music Recommender - AI-powered music recommendation
+• CampusPay - Automated fee management system
+• Market Analysis Dashboard - Interactive Power BI dashboard
+• Stock Price Prediction - ML model using LSTM networks
 
-2. Face Detection & Gender Classification App
-   - Real-time computer vision application with 95%+ accuracy
-   - Technologies: Python, OpenCV, TensorFlow, Deep Learning, Flask
-
-3. Emotion-Sync Music Recommender
-   - AI-powered music recommendation based on emotion detection
-   - Technologies: Python, Computer Vision, Spotify API, React, ML
-
-4. CampusPay
-   - Automated fee management system for educational institutions
-   - Technologies: Java, Spring Boot, MySQL, React, Payment Gateway
-
-5. Market Analysis Dashboard (Power BI)
-   - Interactive dashboard for comprehensive market analysis
-   - Technologies: Power BI, SQL, Python, Data Analytics, DAX
-
-6. Stock Price Prediction
-   - ML model for financial market prediction using LSTM
-   - Technologies: Python, TensorFlow, LSTM, Pandas, Matplotlib
-
-EXPERIENCE & ACHIEVEMENTS
+ACHIEVEMENTS
 • Specialized in building innovative, real-world applications
 • Strong foundation in AI, automation, and data analytics
-• Experience with full-stack development and cloud deployment
-• Passionate about solving complex problems with technology
-    `;
+• Experience with full-stack development and cloud deployment`;
 
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Harsh_Bansal_Resume.pdf';
-    document.body.appendChild(a);
-    a.click();
-    URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+      const blob = new Blob([resumeContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = url;
+      fallbackLink.download = 'Harsh_Bansal_Resume.txt';
+      document.body.appendChild(fallbackLink);
+      fallbackLink.click();
+      URL.revokeObjectURL(url);
+      document.body.removeChild(fallbackLink);
+    };
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const scrollToProjects = () => {
@@ -123,15 +112,34 @@ EXPERIENCE & ACHIEVEMENTS
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 overflow-x-hidden">
-      <Header />
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
+      {/* Dynamic background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div 
+          className="absolute w-96 h-96 bg-gray-200/20 dark:bg-gray-800/20 rounded-full blur-3xl transition-transform duration-1000"
+          style={{
+            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+            left: '10%',
+            top: '20%'
+          }}
+        />
+        <div 
+          className="absolute w-96 h-96 bg-gray-300/20 dark:bg-gray-700/20 rounded-full blur-3xl transition-transform duration-1000"
+          style={{
+            transform: `translate(${-mousePosition.x * 0.01}px, ${-mousePosition.y * 0.01}px)`,
+            right: '10%',
+            bottom: '20%'
+          }}
+        />
+      </div>
+      <Header downloadResume={downloadResume} />
       <Hero 
         isVisible={isVisible} 
         downloadResume={downloadResume} 
         scrollToProjects={scrollToProjects} 
       />
       <About isVisible={isVisible} />
-      <Skills isVisible={isVisible} mousePosition={mousePosition} />
+      <Skills />
       <Projects isVisible={isVisible} />
       <Contact />
     </div>
