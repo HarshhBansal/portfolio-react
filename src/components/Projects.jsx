@@ -5,16 +5,16 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform built with React, Node.js, and MongoDB.',
-      github: 'https://github.com/harshbhatia66/ecommerce-platform',
+      title: 'Emotion Sync Music Recommender',
+      description: 'A music recommendation system that adapts to the user\'s emotions using AI and machine learning.',
+      github: 'https://github.com/harshbhatia66/emotion-sync-music-recommender',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop&crop=center'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A productivity app for managing tasks and projects with team collaboration features.',
-      github: 'https://github.com/harshbhatia66/task-manager',
+      title: 'Smart Parking System',
+      description: 'An intelligent parking solution that uses AI to optimize space utilization and reduce congestion.',
+      github: 'https://github.com/harshbhatia66/smart-parking-system',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=300&fit=crop&crop=center'
     },
     {
@@ -33,8 +33,8 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Social Media Dashboard',
-      description: 'A comprehensive dashboard for managing multiple social media accounts and analytics.',
+      title: 'Face recognition & gender classification',
+      description: 'An AI-powered system that detects faces, recognizes individuals, and classifies gender from images or video streams',
       github: 'https://github.com/harshbhatia66/social-dashboard',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=300&fit=crop&crop=center'
     },

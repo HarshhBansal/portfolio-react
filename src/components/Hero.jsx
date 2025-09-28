@@ -48,15 +48,15 @@ const Hero = ({ downloadResume, scrollToProjects }) => {
 
           {/* Social Links */}
           <div className="flex space-x-6 pt-4">
-            <a href="https://github.com/harshbansal" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/HarshhBansal" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 transform hover:scale-110">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com/in/harshbansal" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.linkedin.com/in/harshhbansal/" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 transform hover:scale-110">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:harsh.bansal@example.com" 
+            <a href="bansalharsh143@gmail.com" 
                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 transform hover:scale-110">
               <Mail size={24} />
             </a>

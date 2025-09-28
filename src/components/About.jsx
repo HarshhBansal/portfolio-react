@@ -1,13 +1,15 @@
-﻿import React from 'react';
+﻿import React from "react";
 
 const About = ({ isVisible }) => {
   const aboutData = {
     personalInfo: {
       name: "Harsh Bansal",
-      photo: "https://via.placeholder.com/300x400/d1d5db/6b7280?text=Harsh+Bansal",
-      summary: "I am Harsh Bansal, a Computer Science and Engineering graduate specializing in Artificial Intelligence and Machine Learning.",
-      description: "Skilled in Python, Java, C++, JavaScript, SQL, Power BI, AWS, Selenium, and Jenkins."
-    }
+      photo: "About.png",
+      summary:
+        "I am Harsh Bansal, a Computer Science and Engineering graduate specializing in Artificial Intelligence and Machine Learning.",
+      description:
+        "Skilled in Python, Java, C++, JavaScript, SQL, Power BI, AWS, Selenium, and Jenkins.",
+    },
   };
 
   return (
@@ -19,10 +21,10 @@ const About = ({ isVisible }) => {
         <div className="grid lg:grid-cols-3 gap-12 items-center">
           <div className="lg:col-span-1 flex justify-center">
             <div className="w-80 h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 shadow-2xl">
-              <img 
+              <img
                 src={aboutData.personalInfo.photo}
                 alt={aboutData.personalInfo.name}
-                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover transition-all duration-500"
               />
             </div>
           </div>

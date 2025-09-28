@@ -8,13 +8,13 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h3 className="text-2xl font-bold mb-6 transform hover:scale-105 transition-all duration-300">Let's Connect</h3>
         <div className="flex justify-center space-x-6 mb-8">
-          <a href="https://linkedin.com/in/harshbansal" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg">
+          <a href="https://www.linkedin.com/in/harshhbansal/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg">
             <Linkedin size={24} />
           </a>
-          <a href="https://github.com/harshbansal" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:-rotate-12 shadow-lg">
+          <a href="https://github.com/HarshhBansal" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:-rotate-12 shadow-lg">
             <Github size={24} />
           </a>
-          <a href="mailto:harsh.bansal@example.com" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:-rotate-12 shadow-lg">
+          <a href="mailto:bansalharsh143@gmail.com" className="p-3 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 transform hover:scale-110 hover:-rotate-12 shadow-lg">
             <Mail size={24} />
           </a>
         </div>
